@@ -1,0 +1,25 @@
+﻿
+<h1>To Do</h1>
+<ul>
+    @foreach (var toDoItem in toDoItems)
+    {
+        <li>@toDoItem.Text</li>
+    }
+</ul>
+
+<form>
+    <input placeholder="Text" />
+    <br />
+    <br />
+    <button type="submit">Add another To Do</button>
+</form>
+
+@code {
+    private List<Item> toDoItems = new List<Item>();
+
+    class Item
+    {
+        public string Text { get; set; }
+        public bool IsDone { get; set; }
+    }
+}
